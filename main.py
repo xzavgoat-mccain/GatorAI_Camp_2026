@@ -116,7 +116,7 @@ class Game:
             info_font = pygame.font.SysFont(None, 24)
 
         # Draw game title at top
-        game_title = game_title_font.render("PyDew Valley", True, "White")
+        game_title = game_title_font.render("Pydew Valley", True, "White")
         subtitle = info_font.render("GAIC 26", True, (100, 200, 100))
         title_rect = game_title.get_rect(
             center=(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 - 120)

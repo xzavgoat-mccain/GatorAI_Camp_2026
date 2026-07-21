@@ -173,5 +173,12 @@ NPC_DATA = {
             "I'm Robin, a helper NPC created using Python classes.",
             "Try editing settings.py to change what I say, or create your own custom NPC!"
         ]  # Default starter dialogue lines
+    },
+ "sans": {
+        "pos": (1000, 800), # Default spawn position
+        "graphic": "graphics/objects/sansutdr.png",  # Placeholder using existing asset (Default: "graphics/objects/merchant.png")
+        "dialogue": [
+            "Do you wanna have a bad time?",
+        ]  # Default starter dialogue lines
     }
-}
+ }

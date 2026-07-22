@@ -129,7 +129,7 @@ GROW_SPEED = {
 DAY_GROWTH = 10  # Growth added after sleeping one day (Default: 10)
 
 # @STUDENT-EDIT-Day2-2: Change the player's movement speed (PLAYER_SPEED)
-PLAYER_SPEED = 200  # Player movement speed (Default: 200)
+PLAYER_SPEED = 400  # Player movement speed (Default: 200)
 
 # =============================================================================
 # ECONOMIC SYSTEM - PRICES AND VALUES
@@ -175,7 +175,7 @@ NPC_DATA = {
         ]  # Default starter dialogue lines
     },
  "sans": {
-        "pos": (1000, 800), # Default spawn position
+        "pos": (2000, 1000), # Default spawn position
         "graphic": "graphics/objects/sansutdr.png",  # Placeholder using existing asset (Default: "graphics/objects/merchant.png")
         "dialogue": [
             "Do you wanna have a bad time?",

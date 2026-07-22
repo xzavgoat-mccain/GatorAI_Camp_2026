@@ -393,6 +393,9 @@ class Level:
         elif self.shop_active:
             self.menu.display()
 
+        if self.player.sans_fight.active:
+            self.player.sans_fight.draw()
+
         # UI AND VISUAL EFFECTS
         self.overlay.display()
 

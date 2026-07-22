@@ -19,6 +19,7 @@ from support import *  # Helper functions
 from timer import Timer  # Custom timer class
 import os  # File system operations
 import game_settings  # Audio and settings management
+from sans_fight import SansFight
 
 
 class Player(pygame.sprite.Sprite):
@@ -118,6 +119,7 @@ class Player(pygame.sprite.Sprite):
         self.npc_sprites = npc_sprites  # Custom NPCs group
         self.trigger_dialogue = trigger_dialogue  # Callback to start NPC dialogue
         self.shake_camera = shake_camera  # Callback to shake camera
+        self.sans_fight = SansFight(pygame.display.get_surface())
 
         # AUDIO SYSTEM - Sound effects for player actions
         base_path = os.path.dirname(os.path.abspath(__file__))
@@ -264,8 +266,12 @@ class Player(pygame.sprite.Sprite):
                 collided_npc = pygame.sprite.spritecollide(self, self.npc_sprites, False)
                 if collided_npc:
                     npc = collided_npc[0]
-                    self.trigger_dialogue(npc.name, npc.dialogue)
-                    self.direction = pygame.math.Vector2()  # freeze while talking
+                    if npc.name.lower() == "sans":
+                        self.sans_fight.start()
+                        self.direction = pygame.math.Vector2()
+                    else:
+                        self.trigger_dialogue(npc.name, npc.dialogue)
+                        self.direction = pygame.math.Vector2()  # freeze while talking
                 else:
                     # Otherwise check for a Bed/Trader interaction zone we're touching
                     collided_interaction_sprite = pygame.sprite.spritecollide(
@@ -338,6 +344,7 @@ class Player(pygame.sprite.Sprite):
         # @STUDENT-EDIT-Day2-4: Add a simple boundary check 'if' statement to prevent the player from leaving the screen.
 
     def update(self, dt):
+        self.sans_fight.update(dt)
         """Run one frame of the player: input -> status -> timers -> aim -> move -> animate."""
         self.input()
         self.get_status()

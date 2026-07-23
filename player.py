@@ -338,10 +338,7 @@ class Player(pygame.sprite.Sprite):
         # @STUDENT-EDIT-Day2-4: Add a simple boundary check 'if' statement to prevent the player from leaving the screen.
         if self.pos.y < 0:
             self.pos.y = 0
-        if self.pos.y > SCREEN_HEIGHT:
-            self.pos.y = SCREEN_HEIGHT
-            self.hitbox.centery = round(self.pos.y)
-            self.rect.centery = self.hitbox.centery
+      
 
     def update(self, dt):
         """Run one frame of the player: input -> status -> timers -> aim -> move -> animate."""

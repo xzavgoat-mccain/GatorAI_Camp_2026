@@ -162,7 +162,7 @@ class AIDialogueManager:
             elif "new" in player_context or "starting" in player_context:
                 return "Hello there! New to farming? Don't worry, I've got just the tools and seeds to get you started on your adventure!"
             else:
-                return "Welcome! It's a fine day for farming, isn't it? Let me know if you need anything."
+                return "sup bro"
 
         # Generic fallback for any other NPC with basic emotion awareness
         if emotion == "happy":

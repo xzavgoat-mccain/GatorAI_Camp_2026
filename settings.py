@@ -175,10 +175,18 @@ NPC_DATA = {
         ]  # Default starter dialogue lines
     },
  "sans": {
-        "pos": (2000, 1000), # Default spawn position
+        "pos": (2100, 1080), # Default spawn position
         "graphic": "graphics/objects/sansutdr.png",  # Placeholder using existing asset (Default: "graphics/objects/merchant.png")
         "dialogue": [
-            "Do you wanna have a bad time?",
+            "hey kid",
+        ]  # Default starter dialogue lines
+    },
+    "ketchup": {
+        "pos": (2000, 1100),  # Default spawn position
+        "graphic": "graphics/objects/ketchup.png",  # Placeholder using existing asset (Default: "graphics/objects/merchant.png")
+        "dialogue": [
+            "ketchup",
         ]  # Default starter dialogue lines
     }
- }
+}
+  
